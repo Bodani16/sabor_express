@@ -14,8 +14,9 @@ print("""
       L
       U
       R
-      A""")
 ##Ex.04 valor de pi
+      A""")
+
 from math import pi
 valor_de_pi = round(pi,5)
 print(valor_de_pi)
