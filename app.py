@@ -23,6 +23,7 @@ def finalizar_app():
     os.system("cls")
     print("Encerrando o app\n")
 
+##usuario escolhe opções
 def escolher_opcoes():
     opcao_escolhida = int(input("Escolha uma opção: "))
 
@@ -31,7 +32,7 @@ def escolher_opcoes():
         print("Cadastrar restaurante")
     elif opcao_escolhida == 2:
         print("Listar restaurantes")
-    elif opcao_escolhida ==3:
+    elif opcao_escolhida == 3:
         print("Ativar restaurante")
     else:
         finalizar_app()
