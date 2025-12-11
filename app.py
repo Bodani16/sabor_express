@@ -40,5 +40,6 @@ def main():
     exibir_nome_do_programa()
     exibir_opcoes()
     escolher_opcoes()
+    
 if __name__ == "__main__":
     main()
