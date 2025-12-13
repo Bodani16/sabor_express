@@ -1,6 +1,8 @@
 import os
 #lista de restaurantes
-restaurantes = ["Pizza", "Sushi"]
+restaurantes = [{'nome':'Japinha', 'categoria':'Japonesa', 'ativo':False}, 
+                {'nome':'Pizza Superma', 'categoria':'Pizza', 'ativo':True},
+                {'nome':'Cantina', 'categoria':'Italiano', 'ativo':False}]
 
 #titulo
 def exibir_nome_do_programa():
@@ -39,18 +41,23 @@ def opcao_invalida():
 
 def cadastrar_restaurante():
     exibir_subtitulo("cadastro de novos restaurantes")
-    nome_do_restaurante = input("Digite o nome do restaurante que quer cadastrar : ")
-    restaurantes.append(nome_do_restaurante)
+    nome_do_restaurante = input("Digite o nome do restaurante que quer cadastrar: ")
+    categoria = input(f"Digite o nome da categoria do restaurante{nome_do_restaurante}: ")
+    dados_do_restaurante = {"nome":nome_do_restaurante,
+                          "categoria":categoria, "ativo":False}
+    restaurantes.append(dados_do_restaurante)
     print(f"O restaurante {nome_do_restaurante} foi cadastrado com sucesso! ")
     voltar_ao_menu_principal()
 
 def listar_restaurantes():
    exibir_subtitulo("Listando Restaurantes! ")
     
-for restaurante in restaurantes:
-        print(f".{restaurante}")
-
-        voltar_ao_menu_principal()
+   for restaurante in restaurantes:
+     nome_restaurante = restaurante["nome"] 
+     categoria = restaurante['categoria']    
+     ativo = restaurante['ativo']            
+     print(f'-> {nome_restaurante} | {categoria} | {ativo}')
+   voltar_ao_menu_principal()
 
 ##usuario escolhe opções
 def escolher_opcoes():
@@ -79,4 +86,3 @@ def main():
     
 if __name__ == "__main__":
     main()
-    
