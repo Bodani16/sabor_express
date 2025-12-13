@@ -1,6 +1,6 @@
 import os
-
-restaurantes = []
+#lista de restaurantes
+restaurantes = ["Pizza", "Sushi"]
 
 #titulo
 def exibir_nome_do_programa():
@@ -13,6 +13,10 @@ def exibir_nome_do_programa():
 ╚═════╝░╚═╝░░╚═╝╚═════╝░░╚════╝░╚═╝░░╚═╝  ╚══════╝╚═╝░░╚═╝╚═╝░░░░░╚═╝░░╚═╝╚══════╝╚═════╝░╚═════╝░
       ''')
 
+def exibir_subtitulo(texto):
+    os.system("cls")
+    print(texto)
+    print()
 
 #menu do usuario
 def exibir_opcoes():
@@ -21,23 +25,33 @@ def exibir_opcoes():
     print("3. Ativar restaurantes")
     print("4. Sair\n")
 
+#Pra encerrar o aplicativo
 def finalizar_app():
-    os.system("cls")
-    print("Encerrando o app\n")
+    exibir_subtitulo("Encerrando o programa.. ")
+
+def voltar_ao_menu_principal():
+     input("\nDigite uma tecla para voltar o menu principal: ")
+     main()
 
 def opcao_invalida():
     print("Opção inválida\n")
-    input("Digite uma tecla para voltar o menu principal: ")
-    main()
+    voltar_ao_menu_principal()
 
 def cadastrar_restaurante():
-    os.system("cls")
-    print("cadastro de novos restaurantes\n")
+    exibir_subtitulo("cadastro de novos restaurantes")
     nome_do_restaurante = input("Digite o nome do restaurante que quer cadastrar : ")
     restaurantes.append(nome_do_restaurante)
     print(f"O restaurante {nome_do_restaurante} foi cadastrado com sucesso! ")
-    input("Digite uma tecla para voltar o menu principal: ")
-    main()
+    voltar_ao_menu_principal()
+
+def listar_restaurantes():
+   exibir_subtitulo("Listando Restaurantes! ")
+    
+for restaurante in restaurantes:
+        print(f".{restaurante}")
+
+        voltar_ao_menu_principal()
+
 ##usuario escolhe opções
 def escolher_opcoes():
     try:
@@ -47,7 +61,7 @@ def escolher_opcoes():
         if opcao_escolhida == 1:
            cadastrar_restaurante()
         elif opcao_escolhida == 2:
-            print("Listar restaurantes")
+           listar_restaurantes()
         elif opcao_escolhida == 3:
             print("Ativar restaurante")
         elif opcao_escolhida == 4:
@@ -65,3 +79,4 @@ def main():
     
 if __name__ == "__main__":
     main()
+    
