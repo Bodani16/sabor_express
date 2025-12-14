@@ -42,6 +42,7 @@ def opcao_invalida():
     print("Opção inválida\n")
     voltar_ao_menu_principal()
 
+# função para cadastrar o usuario
 def cadastrar_restaurante():
     exibir_subtitulo("cadastro de novos restaurantes")
     nome_do_restaurante = input("Digite o nome do restaurante que quer cadastrar: ")
@@ -52,6 +53,7 @@ def cadastrar_restaurante():
     print(f"O restaurante {nome_do_restaurante} foi cadastrado com sucesso! ")
     voltar_ao_menu_principal()
 
+#para listar os restaurantes
 def listar_restaurantes():
    exibir_subtitulo("Listando Restaurantes! ")
    
@@ -63,6 +65,7 @@ def listar_restaurantes():
      print(f'-> {nome_restaurante.ljust(20)} | {categoria.ljust(20)} | {ativo}')
    voltar_ao_menu_principal()
 
+#alternar para ativo ou desativado!
 def alternar_estado_restaurante():
     exibir_subtitulo("Alternando o estado do restaurante!")
     nome_restaurante = input("Digite o nome do restaurante que deseja alternar o estado: ")
@@ -97,6 +100,7 @@ def escolher_opcoes():
     except:
         opcao_invalida()        
 
+#ordem de execução do programa
 def main():
     os.system("cls")
     exibir_nome_do_programa()
