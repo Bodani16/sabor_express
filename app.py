@@ -17,15 +17,17 @@ def exibir_nome_do_programa():
 
 def exibir_subtitulo(texto):
     os.system("cls")
-    linha = "*" (len(texto) + 4)
+    linha = "*" * (len(texto))
+    print(linha)
     print(texto)
+    print(linha)
     print()
 
 #menu do usuario
 def exibir_opcoes():
     print("1. Cadastrar restaurante")
     print("2. Listar restaurantes")
-    print("3. Ativar restaurantes")
+    print("3. Alternar estado do restaurante")
     print("4. Sair\n")
 
 #Pra encerrar o aplicativo
@@ -43,7 +45,7 @@ def opcao_invalida():
 def cadastrar_restaurante():
     exibir_subtitulo("cadastro de novos restaurantes")
     nome_do_restaurante = input("Digite o nome do restaurante que quer cadastrar: ")
-    categoria = input(f"Digite o nome da categoria do restaurante{nome_do_restaurante}: ")
+    categoria = input(f"Digite o nome da categoria do restaurante {nome_do_restaurante}: ")
     dados_do_restaurante = {"nome":nome_do_restaurante,
                           "categoria":categoria, "ativo":False}
     restaurantes.append(dados_do_restaurante)
@@ -52,12 +54,13 @@ def cadastrar_restaurante():
 
 def listar_restaurantes():
    exibir_subtitulo("Listando Restaurantes! ")
-    
+   
+   print(f"{"Nome do restaurante:".ljust(23)} | {"Categoria:".ljust(20)} | {"Status:"}")
    for restaurante in restaurantes:
      nome_restaurante = restaurante["nome"] 
      categoria = restaurante['categoria']    
      ativo = "ativado" if restaurante['ativo'] else "desativado"           
-     print(f'-> {nome_restaurante} | {categoria} | {ativo}')
+     print(f'-> {nome_restaurante.ljust(20)} | {categoria.ljust(20)} | {ativo}')
    voltar_ao_menu_principal()
 
 def alternar_estado_restaurante():
