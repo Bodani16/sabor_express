@@ -44,6 +44,14 @@ def opcao_invalida():
 
 # função para cadastrar o usuario
 def cadastrar_restaurante():
+    """Essa função é resposansavel por cadastrar um novo restaurante
+       Input:
+       --Nome do restaurante
+       --categoria
+       
+       Output:
+       --adiciona um novo intem a lista
+    """
     exibir_subtitulo("cadastro de novos restaurantes")
     nome_do_restaurante = input("Digite o nome do restaurante que quer cadastrar: ")
     categoria = input(f"Digite o nome da categoria do restaurante {nome_do_restaurante}: ")
@@ -55,6 +63,7 @@ def cadastrar_restaurante():
 
 #para listar os restaurantes
 def listar_restaurantes():
+   '''essa função serve para listar os restaurantes e seu status'''
    exibir_subtitulo("Listando Restaurantes! ")
    
    print(f"{"Nome do restaurante:".ljust(23)} | {"Categoria:".ljust(20)} | {"Status:"}")
